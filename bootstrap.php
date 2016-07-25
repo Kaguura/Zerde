@@ -1,0 +1,59 @@
+<?php
+
+	  /*
+	**  bootstrap.php - ÈÍÈÖÈÀËÈÇÀÖÈß ÍÀ×ÀËÜÍÛÕ ÏÀÐÀÌÅÒÐÎÂ
+	  */
+	
+		##	ÀÄÐÅÑ ÏÎÄÊËÞ×ÀÅÌÎÉ ÄÈÐÅÊÒÎÐÈÈ ÌÎÄÅËÅÉ ÏÐÎÅÊÒÀ
+	
+	  	define( 'PROJECT_DIRECTORY' , 'project' );
+	
+		##	ÀÄÐÅÑ ÏÎÄÊËÞ×ÀÅÌÎÉ ÄÈÐÅÊÒÎÐÈÈ ÌÎÄÅËÅÉ ÏÐÎÅÊÒÀ
+	
+		define( 'MODEL_DIRECTORY' ,	'model' );
+	
+		##	ÀÄÐÅÑ ÏÎÄÊËÞ×ÀÅÌÎÉ ÄÈÐÅÊÒÎÐÈÈ ÏÐÅÄÑÒÀÂËÅÍÈß ÏÐÎÅÊÒÀ
+	
+		define( 'VIEW_DIRECTORY' , 'view' );
+	
+		##	ÀÄÐÅÑ ÏÎÄÊËÞ×ÀÅÌÎÉ ÄÈÐÅÊÒÎÐÈÈ ÊÎÍÒÐÎËËÅÐÎÂ ÏÐÎÅÊÒÀ
+	
+		define( 'CONTROLLER_DIRECTORY' , 'controller' );
+	
+		##	ÀÄÐÅÑ ÏÎÄÊËÞ×ÀÅÌÎÉ ÄÈÐÅÊÒÎÐÈÈ ÊÎÍÒÐÎËËÅÐÎÂ ÏÐÎÅÊÒÀ
+	
+		define( 'FRAMEWORK_ROOT_FOLDER' , realpath( dirname( __FILE__ ) . '/' ) . "\\framework" );
+	
+		##	ÀÄÐÅÑ ÏÎÄÊËÞ×ÀÅÌÎÉ ÄÈÐÅÊÒÎÐÈÈ ÏÐÎÅÊÒÀ
+	
+		define( 'PROJECT_ROOT_DIRECTORY' ,  realpath( dirname( __FILE__ ) . '/' ) . "\\" . PROJECT_DIRECTORY );
+	
+		## URL-ÀÄÐÅÑ ÕÎÑÒÀ
+	
+		define( 'SERVER_HOST_URL' , 'http://' . $_SERVER['SERVER_NAME'] );
+	
+		## URL-ÀÄÐÅÑ ÊÎÐÍÅÂÎÉ ÄÈÐÅÊÒÎÐÈÈ ÑÀÉÒÀ
+	
+		define( 'SERVER_ROOT_URL' , SERVER_HOST_URL . dirname($_SERVER['PHP_SELF']) );
+	
+		## URL-ÀÄÐÅÑ ÊÎÐÍÅÂÎÉ ÄÈÐÅÊÒÎÐÈÈ ÏÐÎÅÊÒÀ
+	
+		define( 'PROJECT_ROOT_URL' , SERVER_ROOT_URL . '/' . PROJECT_DIRECTORY );
+	
+		##	ÀÄÐÅÑ ÏÎÄÊËÞ×ÀÅÌÎÉ ÄÈÐÅÊÒÎÐÈÈ ÊÀÑÊÀÄÍÛÕ ÒÀÁËÈÖ ÑÒÈËÅÉ
+	
+		define( 'STYLESHEET_FOLDER' , PROJECT_ROOT_URL . '/' . VIEW_DIRECTORY . '/css' );
+	
+		##	ÀÄÐÅÑ ÏÎÄÊËÞ×ÀÅÌÎÉ ÄÈÐÅÊÒÎÐÈÈ JAVASCRIPT
+	
+		define( 'JAVASCRIPT_FOLDER' , PROJECT_ROOT_URL . '/' . VIEW_DIRECTORY . '/js' );
+	
+		##	ÀÄÐÅÑ ÏÎÄÊËÞ×ÀÅÌÎÉ ÄÈÐÅÊÒÎÐÈÈ ÈÇÎÁÐÀÆÅÍÈÉ
+	
+		define( 'IMAGES_URL' , PROJECT_ROOT_URL . '/' . VIEW_DIRECTORY . '/images' );
+	
+		##	ÀÄÐÅÑ ÏÎÄÊËÞ×ÀÅÌÎÉ ÄÈÐÅÊÒÎÐÈÈ ÈÇÎÁÐÀÆÅÍÈÉ
+	
+		define( 'IMAGES_FOLDER' , PROJECT_ROOT_DIRECTORY . '/' . VIEW_DIRECTORY . '/images' );
+
+?>

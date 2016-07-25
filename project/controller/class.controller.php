@@ -1,0 +1,56 @@
+<?php
+
+	namespace project\controller;
+	
+	use \framework\mvc\FrontController;
+	use \framework\mvc\View;
+	
+	use \framework\registration\Authentification;
+	use \framework\registration\Registration;
+	
+	  /*
+	**	ÍÀÄÑÒÐÎÉÊÀ ÍÀÄ ÖÅÍÒÐÀËÜÍÛÌ ÊÎÍÒÐÎËËÅÐÎÌ Â ÐÀÌÊÀÕ ÏÀÐÀÄÈÃÌÛ MVC ( MODEL - VIEW - CONTROLLER )
+	  */
+	
+	class Controller extends FrontController
+	{
+
+		public function __common( View $view )
+		{
+		
+			// ÏÐÎÂÅÐÊÀ ÀÓÒÅÍÒÈÔÈÊÀÖÈÈ ÏÎËÜÇÎÂÀÒÅËß
+			session_start();
+			$view->isLoggedIn = Authentification::isLoggedIn();
+			$view->role_id = $_SESSION['role_id'];
+		
+			// ÏÓÒÜ Ê ÒÀÁËÈÖÀÌ CSS
+		
+			$view->stylesheet = STYLESHEET_FOLDER;
+		
+			// ÀÍÀËÈÇ ÌÅÒÎÄÎÂ ÊËÀÑÑÀ
+		
+			$list = get_class_methods( $this );
+		
+			// ÑÎÏÎÑÒÀÂËÅÍÈÅ ÀÄÐÅÑÀ ÏÓÒÅÌ ÏÅÐÅÁÎÐÀ ÌÅÒÎÄÎÂ ÊÎÍÒÐÎËËÅÐÀ 
+		
+			foreach( $list as $method )
+			{ 
+			
+				if( $method != '__common' )
+				{
+				
+					$name = $method . '_link';
+				
+					$view->$name = SERVER_ROOT_URL . '/' . $method;
+				
+				}
+			
+			}
+		
+			return $view;
+		
+		}
+		
+	}
+
+?>
